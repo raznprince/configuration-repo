@@ -14,8 +14,17 @@ zuul:
       path: /study-sets/**
       serviceId: study-set-service
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+
 eureka
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-    register-With-eureka: false
+    registerWithEureka: false
